@@ -1,7 +1,6 @@
 
 body
-{
-    background: url('images/fond_jaune.png');
+{   
     font-family: 'Trebuchet MS', Arial, sans-serif;
     color: #181818;
 }
@@ -23,7 +22,7 @@ section h1, footer h1, nav a
 
 header
 {
-    background: url('images/separateur.png') repeat-x bottom;
+    background: url('../images/separateur.png') repeat-x bottom;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -98,7 +97,7 @@ nav a:hover
     margin-top: 15px;
     height: 200px;
     border-radius: 5px;
-    background: url('images/sanfrancisco.jpg') no-repeat;
+    background: url('../images/sanfrancisco.jpg') no-repeat;
     position: relative;
     box-shadow: 0px 4px 4px #1c1a19;
     margin-bottom: 25px;
@@ -209,7 +208,7 @@ aside img
 footer
 {
     display: flex;
-    background:  url('images/ico_top.png') no-repeat top center, url('images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
+    background:  url('../images/ico_top.png') no-repeat top center, url('../images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
     padding-top: 25px;
 }
 
@@ -254,7 +253,7 @@ footer h1
 
 #mes_amis ul
 {
-    list-style-image: url('images/ico_liensexterne.png');
+    list-style-image: url('../images/ico_liensexterne.png');
     padding-left: 2px;
 }
 
@@ -263,10 +262,8 @@ footer h1
     text-decoration: none;
     color: #760001;
 }
-.first
+.art
 {
-	 background-image:url(images/b.jpg);
-
-	
+	 background-image:url('../images/b.jpg');
 }
 
