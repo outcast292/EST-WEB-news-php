@@ -1,7 +1,6 @@
 
 body
-{
-    background: url('images/fond_jaune.png');
+{   
     font-family: 'Trebuchet MS', Arial, sans-serif;
     color: #181818;
 }
@@ -23,7 +22,7 @@ section h1, footer h1, nav a
 
 header
 {
-    background: url('images/separateur.png') repeat-x bottom;
+    background: url('../images/separateur.png') repeat-x bottom;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -98,7 +97,6 @@ nav a:hover
     margin-top: 15px;
     height: 200px;
     border-radius: 5px;
-    background: url('images/sanfrancisco.jpg') no-repeat;
     position: relative;
     box-shadow: 0px 4px 4px #1c1a19;
     margin-bottom: 25px;
@@ -125,13 +123,13 @@ nav a:hover
     position: absolute;
     right: 5px;
     bottom: 5px;
-    background: url('images/fond_degraderouge.png') repeat-x;
+    background-color: lightgray;
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
     text-align: center;
     padding: 3px 8px 0px 8px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -209,7 +207,7 @@ aside img
 footer
 {
     display: flex;
-    background:  url('images/ico_top.png') no-repeat top center, url('images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
+    background:  url('../images/ico_top.png') no-repeat top center, url('../images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
     padding-top: 25px;
 }
 
@@ -254,7 +252,7 @@ footer h1
 
 #mes_amis ul
 {
-    list-style-image: url('images/ico_liensexterne.png');
+    list-style-image: url('../images/ico_liensexterne.png');
     padding-left: 2px;
 }
 
@@ -263,10 +261,48 @@ footer h1
     text-decoration: none;
     color: #760001;
 }
-.first
+.art
 {
-	 background-image:url(images/b.jpg);
+	 background-image:url('../images/b.jpg');
 
-	
+       
+}
+.art h4{
+    border-bottom: 1px solid maroon;
+}
+.art p{
+
+    line-height: 20px;
+    height: 80px;
+    overflow:     hidden;
+
+}
+.art a{
+    color: black;
+    text-decoration: none;
 }
 
+
+.post p{
+
+    line-height: 20px;
+    height: 80px;
+
+}
+.date{
+    border-bottom: 1px solid maroon;
+    font-size: 1.1em;
+    text-align: left;
+    float: right;
+}
+#comment{
+    border-top: 1px solid lightgray; 
+
+}
+#comment h5{
+    float: right;
+}
+#comment p{
+    margin-left: 10%;
+    margin-right: 2%;
+}
