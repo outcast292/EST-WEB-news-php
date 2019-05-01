@@ -8,11 +8,20 @@
     
     <body>
         <div id="bloc_page">
-         <?php require "html/header.html"; ?> 
+            <?php require "html/header.html"; 
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $conn = new mysqli($servername, $username, $password,'news');
+            $sql = "SELECT id_article,contenu,da,label FROM article order by views desc limit 1";
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_assoc($result);
+             
             
-            <div id="banniere_image">
-                <div id="banniere_description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            echo "<div id='banniere_image' style='background: url('images/post/'".$row['id_article'].".jpg) no-repeat;'>
+                <div id='banniere_description'>";
+              echo "l'article en vedette :     " .$row['label']; ?>
+                            
                     <a href="#" class="bouton_rouge">See the article <img src="images/flecheblanchedroite.png" alt="" /></a>
                 </div>
             </div>
@@ -20,18 +29,15 @@
             <section>
                 <article>
                     <h1><img src="images/ico_epingle.png" alt="Catégorie voyage" class="ico_categorie" />Recent Posts</h1>
-					<div class="art">
-					<h4> Titre</h4>
-                    <p>Vivamus sed libero nec mauris pulvinar facilisis ut non sem. Quisque mollis ullamcorper diam vel faucibus. Vestibulum sollicitudin facilisis feugiat. Nulla euismod sodales hendrerit. Donec quis orci arcu. Vivamus fermentum magna a erat ullamcorper dignissim pretium nunc aliquam. Aenean pulvinar condimentum enim a dignissim. Vivamus sit amet lectus at ante adipiscing adipiscing eget vitae felis. In at fringilla est. Cras id velit ut magna rutrum commodo. Etiam ut scelerisque purus. Duis risus elit, venenatis vel rutrum in, imperdiet in quam. Sed vestibulum, libero ut bibendum consectetur, eros ipsum ultrices nisl, in rutrum diam augue non tortor. Fusce nec massa et risus dapibus aliquam vitae nec diam. </p>
-                    </div>
-					<div class="art">
-					<h4> Titre</h4>
-                    <p>Vivamus sed libero nec mauris pulvinar facilisis ut non sem. Quisque mollis ullamcorper diam vel faucibus. Vestibulum sollicitudin facilisis feugiat. Nulla euismod sodales hendrerit. Donec quis orci arcu. Vivamus fermentum magna a erat ullamcorper dignissim pretium nunc aliquam. Aenean pulvinar condimentum enim a dignissim. Vivamus sit amet lectus at ante adipiscing adipiscing eget vitae felis. In at fringilla est. Cras id velit ut magna rutrum commodo. Etiam ut scelerisque purus. Duis risus elit, venenatis vel rutrum in, imperdiet in quam. Sed vestibulum, libero ut bibendum consectetur, eros ipsum ultrices nisl, in rutrum diam augue non tortor. Fusce nec massa et risus dapibus aliquam vitae nec diam. </p>
-                    </div>
-					<div class="art">
-					<h4> Titre</h4>
-                    <p>Vivamus sed libero nec mauris pulvinar facilisis ut non sem. Quisque mollis ullamcorper diam vel faucibus. Vestibulum sollicitudin facilisis feugiat. Nulla euismod sodales hendrerit. Donec quis orci arcu. Vivamus fermentum magna a erat ullamcorper dignissim pretium nunc aliquam. Aenean pulvinar condimentum enim a dignissim. Vivamus sit amet lectus at ante adipiscing adipiscing eget vitae felis. In at fringilla est. Cras id velit ut magna rutrum commodo. Etiam ut scelerisque purus. Duis risus elit, venenatis vel rutrum in, imperdiet in quam. Sed vestibulum, libero ut bibendum consectetur, eros ipsum ultrices nisl, in rutrum diam augue non tortor. Fusce nec massa et risus dapibus aliquam vitae nec diam. </p>
-                    </div>
+                    <?php $sql = "SELECT id_article,contenu,da,label FROM article order by id_article desc limit 3 "; 
+                    $result = $conn->query($sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                       echo  '<div class="art">
+                    <h4>'.$row['label'].'</h4>
+                    <p>'.$row['contenu'].'</p>
+                    </div>';
+                    }
+                    ?>
 
                 </article>
                 <aside>

@@ -97,7 +97,6 @@ nav a:hover
     margin-top: 15px;
     height: 200px;
     border-radius: 5px;
-    background: url('../images/sanfrancisco.jpg') no-repeat;
     position: relative;
     box-shadow: 0px 4px 4px #1c1a19;
     margin-bottom: 25px;
@@ -265,5 +264,16 @@ footer h1
 .art
 {
 	 background-image:url('../images/b.jpg');
+
+       
+}
+.art h4{
+    border-bottom: 1px solid maroon;
+}
+.art p{
+
+    line-height: 20px;
+    height: 80px;
+    overflow:     hidden;
 }
 
