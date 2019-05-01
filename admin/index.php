@@ -1,22 +1,22 @@
 <html>
 <head>
 
-	<link rel="stylesheet" href="../css/adim4.css">
+	<link rel="stylesheet" href="../css/admin.css">
 	<title> Admin pannel </title>
-	<center><h1> News Now </h1></center>
 
 </head>
 
 <body>
-
+<div style="width: 900px;margin: auto;">
+	
 <div id="header">
 </br>
 
 
-<h3> Admin name</h3>
+<h1 style="padding-top: 2pxd"> News Now </h1>
 <div class="info"> Root    <input type="button" value="logout" >
 	<p><time>10:00</time>   11/11/1111.</p>
-	<center><p class="do">last login:   <time>10:00</time> 11/11/1111.</p></center>
+	<p class="do">last login:   <time>10:00</time> 11/11/1111.</p>
 </div>
 </div>
 
@@ -42,7 +42,9 @@
 
 </div>
 
- </body>
+ </body>	
+</div>
+
 
 
 
