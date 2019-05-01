@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<link rel="stylesheet" href="adim4.css">
+	<link rel="stylesheet" href="../css/adim4.css">
 	<title> Admin pannel </title>
 	<center><h1> News Now </h1></center>
 
