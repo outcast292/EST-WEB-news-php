@@ -123,13 +123,13 @@ nav a:hover
     position: absolute;
     right: 5px;
     bottom: 5px;
-    background: url('images/fond_degraderouge.png') repeat-x;
+    background-color: lightgray;
     border: 1px solid #760001;
     border-radius: 5px;
     font-size: 1.2em;
     text-align: center;
     padding: 3px 8px 0px 8px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 

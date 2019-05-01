@@ -38,9 +38,16 @@
          </section>
          <br><br>
          <article>
-         	<?php  $sql = "SELECT * FROM comment where id_article=".$data['id_article'];
-         	mysqli_free_result($result);
+         	<?php  
+         		$sql = "UPDATE article SET views=views+1 where id_article=".$data["id_article"];
+         		$result = mysqli_query($conn, $sql);
+
+         	$sql = "SELECT * FROM comment where id_article=".$data['id_article'];
          			$es = mysqli_query($conn, $sql);
+         			if (!$es) {
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}
         			while ($data=mysqli_fetch_array($es)) { ?>
         			<div id="comment">
                 		<h4><?php echo  $data["nickname"]?></h4>

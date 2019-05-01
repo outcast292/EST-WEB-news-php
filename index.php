@@ -16,13 +16,13 @@
             $sql = "SELECT id_article,contenu,da,label FROM article order by views desc limit 1";
             $result = $conn->query($sql);
             $row = mysqli_fetch_assoc($result);
+             echo "images/post/".$row['id_article'].".jpg";
              
             
-            echo "<div id='banniere_image' style='background: url('images/post/'".$row['id_article'].".jpg) no-repeat;'>
+            echo "<div id='banniere_image' style='background-image: url(images/post/".$row["id_article"].".jpg);'>
                 <div id='banniere_description'>";
-              echo "l'article en vedette :     " .$row['label']; ?>
+              echo "l'article en vedette :     " .$row['label']."<a href='post?id=".$row["id_article"]."' class='bouton_rouge'>See the article <img src='images/flecheblanchedroite.png' alt='' /></a>"?>
                             
-                    <a href="#" class="bouton_rouge">See the article <img src="images/flecheblanchedroite.png" alt="" /></a>
                 </div>
             </div>
             
