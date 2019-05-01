@@ -45,8 +45,13 @@
                     <h1>À propos de l'auteur</h1>
                     <img src="images/bulle.png" alt="" id="fleche_bulle" />
                     <p id="photo_zozor"><img src="images/zozor_classe.png" alt="Photo de Zozor" /></p>
-                    <p>Laisse-moi le temps de me présenter&nbsp;: je m'appelle Zozor, je suis né un 23 novembre 2005.</p>
-                    <p>Bien maigre, n'est-ce pas ? C'est pourquoi, aujourd'hui, j'ai décidé d'écrire ma biographie afin que vous sachiez qui je suis réellement.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                    <p>
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     
                 </aside>
             </section>

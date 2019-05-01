@@ -282,7 +282,21 @@ footer h1
     text-decoration: none;
 }
 
-.post{
+.post
+{
+
+
+       
+}
+.post p{
+
     line-height: 20px;
     height: 80px;
+
+}
+.date{
+    border-bottom: 1px solid maroon;
+    font-size: 1.1em;
+    text-align: left;
+    float: right;
 }

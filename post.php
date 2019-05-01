@@ -15,7 +15,7 @@
          $username = "root";
          $password = "";
          $conn = new mysqli($servername, $username, $password,'news'); 
-         $sql = "SELECT * FROM article where id_article=".$_GET["id"];
+         $sql = "SELECT id_article,label,da,contenu,name FROM article a join admin ad on a.id_admin=ad.id_admin where id_article=".$_GET["id"];
          $result = mysqli_query($conn, $sql);
          $data=mysqli_fetch_assoc($result);
 
@@ -24,6 +24,8 @@
          ?>
          <section>
          <article>
+         	<br><br>
+         	<div class="date"><?php echo "Le " . $data["da"] . " par " . $data["name"];?></div>
          	<br><br>
          	<?php echo '<img src="images/post/'.$_GET['id'].'.jpg" >';  ?>
          	<h1><?php echo $data["label"];?></h1>
