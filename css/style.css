@@ -282,3 +282,7 @@ footer h1
     text-decoration: none;
 }
 
+.post{
+    line-height: 20px;
+    height: 80px;
+}

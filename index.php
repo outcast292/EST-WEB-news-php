@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
-        <title>Zozor - Carnets de voyage</title>
+        <title>HELLO WORLD</title>
     </head>
     
     <body>
