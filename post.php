@@ -15,6 +15,11 @@
          $username = "root";
          $password = "";
          $conn = new mysqli($servername, $username, $password,'news');
+         if(isset($_POST["nick"])){
+         	$sql = "INSERT INTO comment(id_article,nickname,comment) VALUES('".$_GET["id"]."','".$_POST["nick"]."','".$_POST["comment"]."')";
+         	$result = mysqli_query($conn, $sql);
+         	printf("Error: %s\n", mysqli_error($conn));
+         }
          if($_GET["id"]!=NULL){
          	 $sql = "SELECT id_article,label,da,contenu,name FROM article a join admin ad on a.id_admin=ad.id_admin where id_article=".$_GET["id"];
          } 
@@ -37,12 +42,21 @@
          </article>
          </section>
          <br><br>
+         <form method="post" class="feild">
+  		<fieldset>
+   		 <legend style="color: maroon">add comment:</legend>
+    		Name:<br><input style="width: 100%; box-sizing: border-box;" type="text" name="nick"><br>
+		   	comment:<br><textarea style="width: 100%;box-sizing: border-box;" name="comment"></textarea>
+		   	<br><br>
+		   	<input type="submit" name="" value="send" style="float: right;margin-right: 7%; width:8%; color: blue;">
+		  </fieldset>
+		</form>
          <article>
          	<?php  
          		$sql = "UPDATE article SET views=views+1 where id_article=".$data["id_article"];
          		$result = mysqli_query($conn, $sql);
 
-         	$sql = "SELECT * FROM comment where id_article=".$data['id_article'];
+         	$sql = "SELECT * FROM comment where id_article=".$data['id_article']." ORDER BY date_cmt DESC";
          			$es = mysqli_query($conn, $sql);
          			if (!$es) {
     printf("Error: %s\n", mysqli_error($conn));
