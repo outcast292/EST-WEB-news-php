@@ -282,12 +282,7 @@ footer h1
     text-decoration: none;
 }
 
-.post
-{
 
-
-       
-}
 .post p{
 
     line-height: 20px;
@@ -299,4 +294,15 @@ footer h1
     font-size: 1.1em;
     text-align: left;
     float: right;
+}
+#comment{
+    border-top: 1px solid lightgray; 
+
+}
+#comment h5{
+    float: right;
+}
+#comment p{
+    margin-left: 10%;
+    margin-right: 2%;
 }

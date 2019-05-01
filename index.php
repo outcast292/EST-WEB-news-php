@@ -56,23 +56,7 @@
                 </aside>
             </section>
             
-            <footer>
-                <div id="add">
-                    <h1>my address</h1>
-                    <p>zaezaekljzaelj zalzakl</p>
-                    <p>zaedzad zad zad za</p>
-                </div>
-               
-                <div id="mes_amis">
-                    <h1>social media </h1>
-					<p><img src="images/facebook.png" alt="Facebook" /><img src="images/twitter.png" alt="Twitter" /><img src="images/vimeo.png" alt="Vimeo" /><img src="images/flickr.png" alt="Flickr" /><img src="images/rss.png" alt="RSS" /></p>
-                   
-                </div>
-				 <div id="mes_amis">
-                   <p> <h1>email</h1> blabla@bal.bla</p>
-                    <p> <h1>tel</h1> 00 00 00 00 00</p>
-                </div>
-            </footer>
+          <?php require 'html/footer.html';  ?>
         </div>
     </body>
 </html>
