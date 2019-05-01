@@ -32,12 +32,13 @@
                     <?php $sql = "SELECT id_article,contenu,da,label FROM article order by id_article desc limit 3 "; 
                     $result = $conn->query($sql);
                     while ($row = mysqli_fetch_assoc($result)) {
-                       echo  '<div class="art">
+                       echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art">
                     <h4>'.$row['label'].'</h4>
                     <p>'.$row['contenu'].'</p>
-                    </div>';
+                    </a></div>';
                     }
                     ?>
+
 
                 </article>
                 <aside>
