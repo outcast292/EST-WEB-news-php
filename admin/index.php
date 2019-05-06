@@ -8,21 +8,21 @@
 <body>
 	<?php 
 	session_start();
-		if ((isset($_POST["name"]) && isset($_POST["pass"]) && !isset($_session["id_ad"]))) {
-			$servername = "localhost";
+	$servername = "localhost";
             $username = "root";
             $password = "";
-            $p=$_POST["pass"];
             $conn = new mysqli($servername, $username, $password,'news');
+		if ((isset($_POST["name"]) && isset($_POST["pass"]) && !isset($_SESSION["id_ad"]))) {
+
             $sql = "SELECT * FROM admin where name='root'";
             $result = $conn->query($sql);
             $row = mysqli_fetch_assoc($result);
             if($_POST["pass"]==$row["pass"]){
-            	$_session["id_ad"]=$row["id_ad"];
-            	$_session["name"]=$row["name"];
+            	$_SESSION["id_ad"]=$row["id_ad"];
+            	$_SESSION["name"]=$row["name"];
             }}
 
-        if (!isset($_session["id_ad"])) {
+        if (!isset($_SESSION["id_ad"])) {
         	require 'php/login.php';
         }
 		
@@ -33,27 +33,9 @@
 
 	<div style="width: 900px;margin:auto;height: 900px;
     background-color: lightgray;">
-		<header>
-		<div id="title">
-                    <div id="logo">
-                        <img src="../images/zozor_logo.png" alt="LOGO" />
-                        <h1>HELLO WORLD</h1>    
-                    </div>
-                    <h2>ADMIN PAGE</h2>
-                </div>
-                <nav >
-        <ul>
+		<?php require "html/header.html" ?>
 
-         <li><a href="#">acceuil</a></li>
-         <li><a href="#">aleatoire</a></li>
-         <li><a href="#">feuilleter</a></li>
-         <li><a href="#">contact</a></li>
-          </ul>
-    </nav>
-
-	</header>
-
-	<h2>Bonjour <?php echo $_session['name']; ?></h2>	
+	<h2>Bonjour <?php echo $_SESSION['name']; ?></h2>	
 	<?php 
 	 $sql = "SELECT sum(views) as sum FROM article";
 	 $result = $conn->query($sql);
@@ -64,10 +46,6 @@
      $sql = "SELECT count(*) as count FROM comment";
 	 $result = $conn->query($sql);
      $cmt = mysqli_fetch_assoc($result);
-
-
-
-
 	 ?>
 	<div class="ct">
 
