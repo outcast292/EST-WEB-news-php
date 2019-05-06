@@ -106,3 +106,7 @@ nav a:hover
     color: #760001;
     border-bottom: 3px solid #760001;
 }
+button
+{
+	float:right;
+}
