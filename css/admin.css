@@ -62,3 +62,21 @@ header h2
     font-weight: normal;
 }
 
+footer
+{
+    display: flex;
+    background:  url('../images/ico_top.png') no-repeat top center, url('../images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
+    padding-top: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+table{
+	width: 100%;
+	text-align: center;
+}
+
+.ct{
+	width: 80%;
+	margin: auto;
+}
