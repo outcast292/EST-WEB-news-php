@@ -46,7 +46,7 @@
         <fieldset>
          <legend style="color: maroon">add comment:</legend>
             Name:<br><input style="width: 100%; box-sizing: border-box;" type="text" name="nick"><br>
-            comment:<br><textarea style="width: 100%;box-sizing: border-box;" name="comment"></textarea>
+            comment:<br><textarea style="width: 100%;box-sizing: border-box;resize: none;" name="comment"></textarea>
             <br><br>
             <input type="submit" name="" value="send" style="float: right;margin-right: 7%; width:8%; color: blue;">
           </fieldset>
