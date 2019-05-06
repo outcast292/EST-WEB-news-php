@@ -37,11 +37,10 @@
 					<td>".$art['id_admin']."</td>
 					<td>".$art['da']."</td>
 					<td>".$art['label']."</td>
-					?>
-            <td> <button type="button" value="Delete">Delete</button> </td>
-                                         
-                                         <?php
-if(isset($_GET['id_article'])){
+					"?>
+            <td> <button type="button" value="Delete">Delete</button> </td>";
+       <?php                                  
+      if(isset($_GET['id_article'])){
  
 	// retrieve id from url
 	$id = (int)$_GET['id_article'];
@@ -51,11 +50,7 @@ if(isset($_GET['id_article'])){
 }
                                             
 			echo "</tr>";
-     }
-	 ?>
-                                         
-                                         
-
+	 ?>                                       
 	</div>
             </div>
 
