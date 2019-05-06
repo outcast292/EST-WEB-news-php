@@ -12,10 +12,59 @@
             $conn = new mysqli($servername, $username, $password,'news');
 		if(!isset($_SESSION["id_ad"])){
 			header("location: index.php");
-		} ?>
+		} 
+		
+		?>
 	<div style="width: 900px;margin: auto;">
 		<?php require "html/header.html" ?>
-	<h2>Bonjour <?php echo $_SESSION['name']; ?></h2>	
+	<h2>Bonjour <?php echo $_SESSION['name']; ?></h2>
+		<?php 
+		if (isset($_POST["submit"])) {
+			$target="../images/post/";
+			$t_file = $target .  basename($_FILES["img"]["name"]);
+			$ext = strtolower(pathinfo($t_file,PATHINFO_EXTENSION));
+			if($ext!="jpg"){
+				echo "<h3 style='color:red'>fichier introduit n'est pas une image jpg</h3>";
+			}
+			else{
+				$sql="INSERT INTO article(id_article,label,contenu,id_admin,da,views) VALUES(NULL, '".$_POST["label"]."','".$_POST["contenu"]."','".$_SESSION["id_ad"]."',NULL,0)";
+						$result = $conn->query($sql);
+						$sql="SELECT id_article as id from article order by id desc limit 1";
+						$result = mysqli_query($conn, $sql);
+						$row=mysqli_fetch_assoc($result);
+						var_dump($row);
+						$t_file = $target . $row["id"] .".jpg";
+				if (move_uploaded_file($_FILES["img"]["tmp_name"], $t_file)) {
+						
+				        echo "l'article est ajouter avec succé ". basename( $_FILES["img"]["name"]);
+				    } else {
+				        echo "Sorry, il y'avait une erreur";
+				    }
+					}
+		}
+
+
+
+
+		 ?>
+
+		<fieldset class="feild">
+		<legend style="color: maroon">modifier</legend>
+		<form method="post" enctype="multipart/form-data">
+			label:<br><input type="text" name="label"><br><br>
+			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;" rows="10"  name="contenu"></textarea>
+			<br><br>
+			l'image en format jpg :<input type="file" name="img" id="img">
+
+			<input type="submit" name="submit" value="send" style="float: right;margin-right: 7%; width:8%; color: blue;">
+			
+		</form>
+
+
+	</fieldset>
+	<br><br>
+	<br><br>
+	<h2>gestion d'anciens article:</h2>
 	<div class="vue">
 	<?php 
 	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article";
