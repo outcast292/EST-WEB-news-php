@@ -17,14 +17,37 @@
 	$servername = "localhost";
             $username = "root";
             $password = "";
-            $conn = new mysqli($servername, $username, $password,'news3');?>
+            $conn = new mysqli($servername, $username, $password,'news');
+
+            if(isset($_GET['id_cmt'])){
+ 
+	// retrieve id from url
+	$id = (int)$_GET['id_cmt'];
+ 
+	// sql delete query
+	$query = "DELETE FROM comment WHERE id_cmt =" . $id;
+	$res=mysqli_query($conn,$query);
+}
+
+
+
+
+
+
+
+
+
+
+            ?>
+
         
         <div class="vue">
 	<?php 
-	$sql = "SELECT id_article,comment,nickname,date_cmt FROM comment order by id_article desc limit 7";
+	$sql = "SELECT * FROM comment order by id_article desc limit 7";
 	$result = $conn->query($sql);
      echo "<table>
 				<tr>
+					<th>cmt it</th>
 					<th>article id</th>
 					<th>comment</th>
 					<th>nickname</th>
@@ -33,23 +56,19 @@
 				</tr>";
      while ( $art = mysqli_fetch_assoc($result)){
      	echo "<tr>
+					<td>".$art['id_cmt']."</td>
 					<td>".$art['id_article']."</td>
-					<td>".$art['id_admin']."</td>
-					<td>".$art['da']."</td>
-					<td>".$art['label']."</td>
+					<td>".$art['comment']."</td>
+					<td>".$art['nickname']."</td>
+					<td>".$art['date_cmt']."</td>
 					"?>
-            <td> <button type="button" value="Delete">Delete</button> </td>";
+            <td> <button type="button" value="Delete"><a href="?id_cmt=<?php echo $art["id_cmt"] ?>">supprimer</a></button> </td>
+        </tr>
+
        <?php                                  
-      if(isset($_GET['id_article'])){
- 
-	// retrieve id from url
-	$id = (int)$_GET['id_article'];
- 
-	// sql delete query
-	$query = "DELETE FROM comment WHERE id =" . $id;
+      
 }
-                                            
-			echo "</tr>";
+                                           
 	 ?>                                       
 	</div>
             </div>
