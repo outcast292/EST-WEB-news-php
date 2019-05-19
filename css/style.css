@@ -187,12 +187,12 @@ aside
     left: -12px;
 }
 
-#photo_zozor
+#author_img
 {
     text-align: center;
 }
 
-#photo_zozor img
+#author_img img
 {
     border: 1px solid #181818;
 }
@@ -266,7 +266,6 @@ footer h1
     border-bottom: 1px solid maroon;
 }
 .art p{
-
     line-height: 20px;
     height: 80px;
     overflow:     hidden;

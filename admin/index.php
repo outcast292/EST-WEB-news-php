@@ -70,7 +70,7 @@
 	<br>
 	
 		<div class="vue">
-			<legend style="text-decoration: underline;">les derniers 5 articles posté</legend>
+			<legend style="text-decoration: underline;">les derniers articles posté</legend>
 			<br>
 	<?php 
 	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article order by id_article desc limit 10";
