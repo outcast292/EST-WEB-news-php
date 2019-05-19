@@ -37,7 +37,7 @@
             <br><br>
             <div class="date"><?php echo "Le " . $data["da"] . " par " . $data["name"];?></div>
             <br><br>
-            <?php echo "<div id='banniere_image' style='background-image:url('images/post/".$data["id_article"].".jpg);' ></div>" ;  ?>
+            <?php echo "<div id='banniere_image' style='background-image: url(images/post/".$data["id_article"].".jpg);'></div>";  ?>
             <h1 id="tit" style="border-bottom: 1px solid maroon;"><?php echo $data["label"];?></h1>
             <div ><?php echo $data["contenu"];?></div>
          </article>
