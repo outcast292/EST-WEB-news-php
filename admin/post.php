@@ -27,22 +27,22 @@
 				echo "<h3 style='color:red'>fichier introduit n'est pas une image jpg</h3>";
 			}
 			else{
-				var_dump($_POST);
-				var_dump($_FILES);
-				$sql="INSERT INTO article(id_article,label,contenu,id_admin,da,views) VALUES('NULL', '".$_POST["label"]."','".$_POST["contenu"]."','". (int)$_SESSION["id_ad"]."','NULL','0')"; 
-						$result = mysqli_query($conn, $sql);
-						$sql="SELECT id_article as id from article order by id desc limit 1";
-						$result = mysqli_query($conn, $sql);
-						$row=mysqli_fetch_assoc($result);
-						var_dump($row);
-						$t_file = $target . $row["id"] .".jpg";
+				
+				$sql="INSERT INTO article(id_article,contenu,id_admin,label,views) VALUES(NULL,'".$_POST["contenu"]."','".$_SESSION["id_ad"]."','".$_POST["label"]."','0')"; 
+				if($result = mysqli_query($conn, $sql)){
+					$sql="SELECT id_article as id from article order by id desc limit 1";
+				$result = mysqli_query($conn, $sql);
+				$row=mysqli_fetch_assoc($result);
+				$t_file = $target . $row["id"] .".jpg";
 				if (move_uploaded_file($_FILES["img"]["tmp_name"], $t_file)) {
 						
-				        echo "l'article est ajouter avec succé ". basename( $_FILES["img"]["name"]);
+				        echo "<h3 style='color:green'>poste ajouté avec succé </h3>";
 				    } else {
-				        echo "Sorry, il y'avait une erreur";
+				        echo "<h3 style='color:red'>erreur dans l'upload de l'image</h3>";
 				    }
-					}
+					}	
+				}
+				
 		}
 
 

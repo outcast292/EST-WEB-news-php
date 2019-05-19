@@ -18,6 +18,7 @@
          if(isset($_POST["nick"])){
             $sql = "INSERT INTO comment(id_article,nickname,comment) VALUES('".$_GET["id"]."','".$_POST["nick"]."','".$_POST["comment"]."')";
             $result = mysqli_query($conn, $sql);
+            header("location: post.php?id=".$_POST['id']."#for");
             
          }
          if($_GET["id"]!=NULL){
@@ -36,15 +37,16 @@
             <br><br>
             <div class="date"><?php echo "Le " . $data["da"] . " par " . $data["name"];?></div>
             <br><br>
-            <?php echo '<div id="banniere_image" style="background-image:url("images/post/'.$data["id_article"].'.jpg");" ></div>';  ?>
+            <?php echo "<div id='banniere_image' style='background-image:url('images/post/".$data["id_article"].".jpg);' ></div>" ;  ?>
             <h1 id="tit" style="border-bottom: 1px solid maroon;"><?php echo $data["label"];?></h1>
             <div ><?php echo $data["contenu"];?></div>
          </article>
          </section>
          <br><br>
-         <form method="post" class="feild">
+         <form method="post" class="feild" id="for">
         <fieldset>
          <legend style="color: maroon">add comment:</legend>
+            <input type="text" hidden="hidden" name="id" value="<?php echo $data['id_article'] ?>">
             Name:<br><input style="width: 100%; box-sizing: border-box;" type="text" name="nick"><br>
             comment:<br><textarea style="width: 100%;box-sizing: border-box;resize: none;" name="comment"></textarea>
             <br><br>
