@@ -21,7 +21,7 @@
                $sql = "SELECT id_article,contenu,da,label FROM article order by id_article desc limit 5 OFFSET ". $deb; 
                                   $result = $conn->query($sql);
                                   while ($row = mysqli_fetch_assoc($result)) {
-                                     echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art">
+                                     echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);">
                                   <h4>'.$row['label'].'</h4>
                                   <p>'.$row['contenu'].'</p>
                                   </a></div>';
