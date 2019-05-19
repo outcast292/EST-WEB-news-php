@@ -88,8 +88,8 @@
 					<td>".$art['label']."</td>
 					<td>".$art['views']."</td>
 					<td>
-						<a href='modify.php?id=" . $art['id_article'] . "'>modifier</a>   
-						<a href='delete.php?id=". $art['id_article'] . "'>supprimer</a>
+						<button style='margin:5px;width:45%;'><a href='modify.php?id=" . $art['id_article'] . "'>modifier</a></button>   
+						<button style='margin:5px;width:45%;'><a href='delete.php?id=". $art['id_article'] . "'>supprimer</a></button>
 					</td>
 				</tr>";
      }

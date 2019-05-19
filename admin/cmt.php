@@ -8,8 +8,7 @@
     <body>
         
         
-        <div style="width: 900px;margin:auto;height: 900px;
-    background-color: lightgray;">
+        <div style="width: 900px;margin:auto;height: 900px;">
 		<?php require "html/header.html" ?>
         
 <?php 
@@ -42,6 +41,9 @@
 
         
         <div class="vue">
+        	<br><br>
+       		<legend style="text-decoration: underline;">interface de gestion des commentaires</legend>
+       		<br><br>
 	<?php 
 	$sql = "SELECT * FROM comment order by id_article desc limit 7";
 	$result = $conn->query($sql);
