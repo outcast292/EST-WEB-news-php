@@ -149,12 +149,15 @@ section
 article, aside
 {
     text-align: justify;
+		color:white;
+
 }
 
 article
 {
     margin-right: 20px;
     flex: 3;
+	color:white;
 }
 
 .ico_categorie
@@ -166,6 +169,7 @@ article
 article p
 {
     font-size: 0.8em;
+	
 }
 
 aside

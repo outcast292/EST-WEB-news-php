@@ -31,7 +31,7 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                          //echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art">
 
-                        echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);background-size: cover;">
+                        echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);background-size: cover; color:white;">
                       
                     <h4 id="test">'.$row['label'].'</h4>
                     <p>'.$row['contenu'].'</p>
