@@ -14,7 +14,7 @@
             $conn = new mysqli($servername, $username, $password,'news');
 		if ((isset($_POST["name"]) && isset($_POST["pass"]) && !isset($_SESSION["id_ad"]))) {
 
-            $sql = "SELECT * FROM admin where name='root'";
+            $sql = "SELECT * FROM admin where name='".$_POST['name'] ."'";
             $result = $conn->query($sql);
             $row = mysqli_fetch_assoc($result);
             if($_POST["pass"]==$row["pass"]){
@@ -31,11 +31,10 @@
 		
 	?>
 
-	<div style="width: 900px;margin:auto;height: 900px;
-    background-color: lightgray;">
+	<div style="width: 900px;margin:auto;height: 900px;">
 		<?php require "html/header.html" ?>
 
-	<h2>Bonjour <?php echo $_SESSION['name']; ?></h2>	
+	<h2 style="color:green;text-decoration: underline;">Bonjour <?php echo $_SESSION['name']; ?></h2>	
 	<?php 
 	 $sql = "SELECT sum(views) as sum FROM article";
 	 $result = $conn->query($sql);
@@ -50,7 +49,7 @@
 	<div class="ct">
 
 		<div class="vue">
-			<legend style="text-decoration: underline;">statistiques en vedette </legend>
+			<legend style="text-decoration: underline;">statistique de site</legend>
 			<br>
 			<table>
 				<tr>
@@ -71,8 +70,10 @@
 	<br>
 	
 		<div class="vue">
+			<legend style="text-decoration: underline;">les derniers 5 articles posté</legend>
+			<br>
 	<?php 
-	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article order by id_article desc limit 5";
+	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article order by id_article desc limit 10";
 	$result = $conn->query($sql);
      echo "<table>
 				<tr>

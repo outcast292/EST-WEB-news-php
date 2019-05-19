@@ -16,7 +16,7 @@
 			header("location: index.php");
 		}
 		
-	require "../html/header.html" ;
+	require "html/header.html" ;
 		if(isset($_POST["label"])){
 			$sql= "UPDATE article SET label='".$_POST["label"]."',contenu='".$_POST["contenu"]."' where id_article=".$_GET["id"];
 			$result = $conn->query($sql);
