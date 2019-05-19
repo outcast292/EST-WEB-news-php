@@ -16,7 +16,7 @@
             $sql = "SELECT id_article,contenu,da,label FROM article order by views desc limit 1";
             $result = $conn->query($sql);
             $row = mysqli_fetch_assoc($result);
-            echo "<div id='banniere_image' style='background-image: url(images/post/".$row["id_article"].".jpg);'>
+            echo "<div id='banniere_image' style='background-image: url(images/post/".$row["id_article"].".jpg);background-size: cover;'>
                 <div id='banniere_description'>";
               echo "l'article en vedette :     " .$row['label']."<a href='post?id=".$row["id_article"]."' class='bouton_rouge'>See the article <img src='images/flecheblanchedroite.png' alt='' /></a>"?>
                             
@@ -31,7 +31,7 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                          //echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art">
 
-                        echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);">
+                        echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);background-size: cover;">
                       
                     <h4>'.$row['label'].'</h4>
                     <p>'.$row['contenu'].'</p>

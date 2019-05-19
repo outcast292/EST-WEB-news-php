@@ -51,12 +51,12 @@
 		 ?>
 
 		<fieldset class="feild">
-		<legend style="color: maroon">modifier</legend>
+		<legend style="color: maroon">ajouter nouveau article</legend>
 		<form method="post" enctype="multipart/form-data">
 			label:<br><input type="text" name="label"><br><br>
 			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;" rows="10"  name="contenu"></textarea>
 			<br><br>
-			l'image en format jpg :<input type="file" name="img" id="img">
+			l'image en format jpg :    <input type="file" name="img" id="img">
 
 			<input type="submit" name="submit" value="send" style="float: right;margin-right: 7%; width:8%; color: blue;">
 			
