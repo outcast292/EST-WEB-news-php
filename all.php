@@ -22,8 +22,8 @@
                                   $result = $conn->query($sql);
                                   while ($row = mysqli_fetch_assoc($result)) {
                                      echo  '<a href="post.php?id='.$row["id_article"].'"><div class="art" style="background-image: url(images/post/'.$row["id_article"].'.jpg);background-size: cover;">
-                                  <h4>'.$row['label'].'</h4>
-                                  <p>'.$row['contenu'].'</p>
+                                  <h4 style="color:white;padding:5px;background-color:black;">'.$row['label'].'</h4>
+                                  <p style="color:white;padding:3px;text-shadow: 1px 1px #000;">'.$row['contenu'].'</p>
                                   </a></div>';
                                   }
                                   $resultFoundRows = $conn->query('SELECT found_rows() AS num');
