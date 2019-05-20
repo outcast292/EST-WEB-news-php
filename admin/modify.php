@@ -18,7 +18,7 @@
 		
 	require "html/header.html" ;
 		if(isset($_POST["label"])){
-			$sql= "UPDATE article SET label='".$_POST["label"]."',contenu='".$_POST["contenu"]."' where id_article=".$_GET["id"];
+			$sql= "UPDATE article SET label='".htmlspecialchars($_POST["label"])."',contenu='".htmlspecialchars($_POST["contenu"])."' where id_article=".$_GET["id"];
 			$result = $conn->query($sql);
 			echo "<h3 style='color:green;'>modifé avec succé !!! <h3>";
 		}

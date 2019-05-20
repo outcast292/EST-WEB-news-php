@@ -16,7 +16,7 @@
          $password = "";
          $conn = new mysqli($servername, $username, $password,'news');
          if(isset($_POST["nick"])){
-            $sql = "INSERT INTO comment(id_article,nickname,comment) VALUES('".$_GET["id"]."','".str_replace("'","",$_POST["nick"])."','".str_replace("'","",$_POST["comment"])."')";
+            $sql = "INSERT INTO comment(id_article,nickname,comment) VALUES('".$_GET["id"]."','".str_replace("'","",htmlspecialchars($_POST["nick"]))."','".str_replace("'","",htmlspecialchars($_POST["comment"]))."')";
             $result = mysqli_query($conn, $sql);
             header("location: post.php?id=".$_POST['id']."#for");
             

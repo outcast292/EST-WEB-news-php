@@ -31,7 +31,7 @@
 			}
 			else{
 				
-				$sql="INSERT INTO article(id_article,contenu,id_admin,label,views) VALUES(NULL,'".str_replace("'","",$_POST["contenu"])."','".$_SESSION["id_ad"]."','".str_replace("'","",$_POST["label"])."','0')"; 
+				$sql="INSERT INTO article(id_article,contenu,id_admin,label,views) VALUES(NULL,'".str_replace("'","",htmlspecialchars($_POST["contenu"]))."','".$_SESSION["id_ad"]."','".str_replace("'","",htmlspecialchars($_POST["label"]))."','0')"; 
 				if($result = mysqli_query($conn, $sql)){
 					$sql="SELECT id_article as id from article order by id desc limit 1";
 				$result = mysqli_query($conn, $sql);

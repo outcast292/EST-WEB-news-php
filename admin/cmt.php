@@ -28,15 +28,6 @@
 	$res=mysqli_query($conn,$query);
 }
 
-
-
-
-
-
-
-
-
-
             ?>
 
         
