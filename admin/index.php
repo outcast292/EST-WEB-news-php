@@ -49,7 +49,7 @@
 	<div class="ct">
 
 		<div class="vue">
-			<legend style="text-decoration: underline;">statistique de site</legend>
+			<legend style="text-decoration: underline;">statistiques de site</legend>
 			<br>
 			<table>
 				<tr>
@@ -70,7 +70,7 @@
 	<br>
 	
 		<div class="vue">
-			<legend style="text-decoration: underline;">les derniers articles posté</legend>
+			<legend style="text-decoration: underline;">les derniers articles postés</legend>
 			<br>
 	<?php 
 	$sql = "SELECT id_article,id_admin,contenu,da,label,views,name FROM article a join admin ad on a.id_admin=ad.id_ad  order by id_article desc limit 10";
