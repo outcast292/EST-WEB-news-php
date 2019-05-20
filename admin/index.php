@@ -14,10 +14,10 @@
             $conn = new mysqli($servername, $username, $password,'news');
 		if ((isset($_POST["name"]) && isset($_POST["pass"]) && !isset($_SESSION["id_ad"]))) {
 
-            $sql = "SELECT * FROM admin where name='".$_POST['name'] ."'";
+            $sql = "SELECT * FROM admin where name='".htmlspecialchars($_POST['name']) ."'";
             $result = $conn->query($sql);
             $row = mysqli_fetch_assoc($result);
-            if($_POST["pass"]==$row["pass"]){
+            if(sha1($_POST["pass"])==$row["pass"]){
             	$_SESSION["id_ad"]=$row["id_ad"];
             	$_SESSION["name"]=$row["name"];
             }}

@@ -20,7 +20,7 @@
 		if(isset($_POST["label"])){
 			$sql= "UPDATE article SET label='".htmlspecialchars($_POST["label"])."',contenu='".htmlspecialchars($_POST["contenu"])."' where id_article=".$_GET["id"];
 			$result = $conn->query($sql);
-			echo "<h3 style='color:green;'>modifé avec succé !!! <h3>";
+			echo "<h3 style='color:green;'>modifié !!! tu reviendras a la page d’accueil dans 5 secondes <h3>";
 		}
 
 
@@ -47,3 +47,10 @@
 	
 </body>
 </html>
+<?php   	
+	$sql = $conn->prepare("INSERT INTO article  VALUES (?, ?,,,$_SESSION['id'])");
+	$sql->bind_param("ss", $_POST['contenu'], $_POST['label']);
+	mysqli_query($conn,$sql);
+
+
+?>
