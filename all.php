@@ -26,17 +26,15 @@
                                   <p style="color:white;padding:3px;text-shadow: 1px 1px #000;">'.$row['contenu'].'</p>
                                   </a></div>';
                                   }
-                                  $resultFoundRows = $conn->query('SELECT found_rows() AS num');
-                                  $nombredElementsTotal = mysqli_fetch_assoc($resultFoundRows);
-                                  $nombreDePages = ceil($nombredElementsTotal["num"] / $limit);
+                                  $res = $conn->query('SELECT found_rows() AS num');
+                                  $limit_num = mysqli_fetch_assoc($res);
+                                  $nbr_pages = ceil($limit_num["num"] / $limit);
                                   if ($page > 1){
                   ?>
                   <a href="?page=<?php echo $page - 1; ?>">Page précédente</a> — <?php
-               }
-               					for ($i = 1; $i <= $nombreDePages; $i++){
+                    }	for ($i = 1; $i <= $nbr_pages; $i++){
                    ?><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a> <?php
-               }
-               		if ($page==$nombreDePages){
+                    } 		if ($page==$nbr_pages){
                    ?>— <a href="?page=<?php echo $page + 1;?>">Page suivante</a><?php
                }
                ?>

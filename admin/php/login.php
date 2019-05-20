@@ -18,9 +18,10 @@
 </style>
 <div style="width: 900px; margin: auto;padding-bottom: 50px;margin-top: 70px;">
 	<div >
-	<img style="margin:auto;" src="img/zozor_logo.png">
-	<h1  style="margin:auto; display: inline-block;" >Hello world</h1>
+	<img style="margin:auto;width: 130px;height: 100px;" src="img/logo.png">
+	<h1  style="margin:auto; display: inline-block;color: red;" >Redstone news</h1>
 </div>
+<hr>
 <fieldset>
 	<p>pour entrer a l'interface de gestion de site, merci d'entrer vos données</p>
 	<img id="log" src="img/login.png" width="70%" height="20%">

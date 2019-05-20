@@ -53,7 +53,7 @@
 			<br>
 			<table>
 				<tr>
-					<th>views</th>
+					<th>ensemble des visites</th>
 					<th>articles</th>
 					<th>commantaires</th>
 				</tr>
@@ -73,20 +73,20 @@
 			<legend style="text-decoration: underline;">les derniers articles posté</legend>
 			<br>
 	<?php 
-	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article order by id_article desc limit 10";
+	$sql = "SELECT id_article,id_admin,contenu,da,label,views,name FROM article a join admin ad on a.id_admin=ad.id_ad  order by id_article desc limit 10";
 	$result = $conn->query($sql);
      echo "<table>
 				<tr>
-					<th>article id</th>
-					<th>admin id</th>
-					<th>da</th>
-					<th>title</th>
-					<th>views</th>
+					<th>id d'article</th>
+					<th>nom de l'admin</th>
+					<th>date</th>
+					<th>titre</th>
+					<th>visites</th>
 				</tr>";
      while ( $art = mysqli_fetch_assoc($result)){
      	echo "<tr>
 					<td>".$art['id_article']."</td>
-					<td>".$art['id_admin']."</td>
+					<td>".$art['name']."</td>
 					<td>".$art['da']."</td>
 					<td>".$art['label']."</td>
 					<td>".$art['views']."</td>

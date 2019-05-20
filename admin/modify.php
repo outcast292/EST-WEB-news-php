@@ -31,14 +31,14 @@
 		$result = $conn->query($sql);
 		$row=mysqli_fetch_assoc($result);
 	 ?>
-	<h2> modifions l'article N°<?php echo $row["id_article"]; ?> ecrite par <?php echo $row["name"]; ?>  :</h2>
+	<h2> modifions l'article N°<?php echo $row["id_article"]; ?> écrit par <?php echo $row["name"]; ?>  :</h2>
 
 	<fieldset class="feild">
 		<legend style="color: maroon">modifier</legend>
 		<form method="post">
-			label:<br><input type="text" name="label" value="<?php echo $row['label']; ?>"><br><br>
-			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;" rows="10"  name="contenu"><?php echo $row['contenu'];  ?></textarea>
-			<input type="submit" name="" value="send" style="float: right;margin-right: 7%; width:8%; color: blue;">
+			label:<br><input type="text" name="label" style="width: 100%;padding: 5px;" value="<?php echo $row['label']; ?>"><br><br>
+			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;padding: 5px;" rows="10"  name="contenu"><?php echo $row['contenu'];  ?></textarea>
+			<input type="submit" name="" value="modifier" style="float: right;margin-right: 7%; width:8%; color: blue;">
 			
 		</form>
 	</fieldset>

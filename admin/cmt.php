@@ -1,7 +1,7 @@
 <html>
     
     <head>
-
+    <title>commentaire</title>
 	<link rel="stylesheet" href="../css/admin.css">
         
     </head>
@@ -42,19 +42,19 @@
         
         <div class="vue">
         	<br><br>
-       		<legend style="text-decoration: underline;">interface de gestion des commentaires</legend>
+       		<legend style="text-decoration: underline;font-size: 1.2em;">interface de gestion des commentaires</legend>
        		<br><br>
 	<?php 
 	$sql = "SELECT * FROM comment order by id_article desc limit 7";
 	$result = $conn->query($sql);
      echo "<table>
 				<tr>
-					<th>cmt it</th>
-					<th>article id</th>
-					<th>comment</th>
-					<th>nickname</th>
-					<th>date_cmt</th>
-                    <th>    </th>
+					<th>N°commentaire</th>
+					<th>Id article</th>
+					<th>Commentaire</th>
+					<th>Surnom</th>
+					<th>Date</th>
+                    <th>Actions</th>
 				</tr>";
      while ( $art = mysqli_fetch_assoc($result)){
      	echo "<tr>
@@ -64,7 +64,7 @@
 					<td>".$art['nickname']."</td>
 					<td>".$art['date_cmt']."</td>
 					"?>
-            <td> <button type="button" value="Delete"><a href="?id_cmt=<?php echo $art["id_cmt"] ?>">supprimer</a></button> </td>
+            <td> <button type="button" value="Delete" style="width: 100%;margin: auto;padding: 5px;" ><a href="?id_cmt=<?php echo $art["id_cmt"] ?>">supprimer</a></button> </td>
         </tr>
 
        <?php                                  

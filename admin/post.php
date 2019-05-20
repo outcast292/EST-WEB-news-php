@@ -3,6 +3,9 @@
 <head>
 	<title>Admin page</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<style type="text/css">
+		
+	</style>
 </head>
 <body>
 	<?php session_start();
@@ -54,10 +57,10 @@
 		 ?>
 
 		<fieldset class="feild">
-		<legend style="color: maroon">ajouter nouveau article</legend>
+		<legend style="color: maroon;text-decoration: underline;">ajouter nouveau article</legend>
 		<form method="post" enctype="multipart/form-data">
-			label:<br><input type="text" name="label"><br><br>
-			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;" rows="10"  name="contenu"></textarea>
+			label:<br><input type="text" name="label" style="width: 100%;padding: 5px;"><br><br>
+			contenu de l'article: <br><textarea style="width: 100%;box-sizing: border-box;resize: vertical;padding: 5px;" rows="10"  name="contenu"></textarea>
 			<br><br>
 			l'image en format jpg :    <input type="file" name="img" id="img">
 
@@ -69,30 +72,30 @@
 	</fieldset>
 	<br><br>
 	<br><br>
-	<h2>gestion d'anciens article:</h2>
+	<h2 style="text-decoration: underline;color: maroon;">gestion d'anciens article:</h2>
 	<div class="vue">
 	<?php 
-	$sql = "SELECT id_article,id_admin,contenu,da,label,views FROM article";
+	$sql = "SELECT id_article,id_admin,contenu,da,label,views,name FROM article a join admin ad on a.id_admin=ad.id_ad";
 	$result = $conn->query($sql);
      echo "<table>
 				<tr>
-					<th>article id</th>
-					<th>admin id</th>
-					<th>da</th>
-					<th>title</th>
-					<th>views</th>
+					<th>id d'article</th>
+					<th>nom ecrivain</th>
+					<th>date</th>
+					<th>titre</th>
+					<th>visites</th>
 					<th>actions</th>
 				</tr>";
      while ( $art = mysqli_fetch_assoc($result)){
      	echo "<tr>
 					<td>".$art['id_article']."</td>
-					<td>".$art['id_admin']."</td>
+					<td>".$art['name']."</td>
 					<td>".$art['da']."</td>
 					<td>".$art['label']."</td>
 					<td>".$art['views']."</td>
 					<td>
-						<button style='margin:5px;width:45%;'><a href='modify.php?id=" . $art['id_article'] . "'>modifier</a></button>   
-						<button style='margin:5px;width:45%;'><a href='delete.php?id=". $art['id_article'] . "'>supprimer</a></button>
+						<button style='margin:3px;width:90%;'><a href='modify.php?id=" . $art['id_article'] . "'>modifier</a></button>   
+						<button style='margin:3px;width:90%;'><a href='delete.php?id=". $art['id_article'] . "'>supprimer</a></button>
 					</td>
 				</tr>";
      }
