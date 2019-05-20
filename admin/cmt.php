@@ -3,6 +3,7 @@
     <head>
     <title>commentaire</title>
 	<link rel="stylesheet" href="../css/admin.css">
+	<link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
         
     </head>
     <body>
@@ -48,13 +49,13 @@
                     <th>Actions</th>
 				</tr>";
      while ( $art = mysqli_fetch_assoc($result)){
-     	echo "<tr>
-					<td>".$art['id_cmt']."</td>
-					<td>".$art['id_article']."</td>
-					<td>".$art['comment']."</td>
-					<td>".$art['nickname']."</td>
-					<td>".$art['date_cmt']."</td>
-					"?>
+     	?>
+     	<tr>
+			<td><?php echo $art["id_cmt"]; ?></td>
+			<td><?php echo $art["id_article"]; ?></td>
+			<td><?php echo $art["comment"]; ?></td>
+			<td><?php echo $art["nickname"]; ?></td>
+			<td><?php echo $art["date_cmt"]; ?></td>
             <td> <button type="button" value="Delete" style="width: 100%;margin: auto;padding: 5px;" ><a href="?id_cmt=<?php echo $art["id_cmt"] ?>">supprimer</a></button> </td>
         </tr>
 

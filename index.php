@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
         <title>HELLO WORLD</title>
+        <link rel="shortcut icon" href="images/favico.png" type="image/x-icon">
     </head>
     
     <body>

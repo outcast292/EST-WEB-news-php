@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8" />
       <link rel="stylesheet" href="css/style.css" />
+      <link rel="shortcut icon" href="images/favico.png" type="image/x-icon">
       <title>HELLO WORLD</title>
    </head>
    <body>

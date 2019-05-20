@@ -3,6 +3,7 @@
 <head>
 	<title>modifer</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
 </head>
 <body>
 	<div style="width: 900px;margin: auto;">
@@ -47,10 +48,3 @@
 	
 </body>
 </html>
-<?php   	
-	$sql = $conn->prepare("INSERT INTO article  VALUES (?, ?,,,$_SESSION['id'])");
-	$sql->bind_param("ss", $_POST['contenu'], $_POST['label']);
-	mysqli_query($conn,$sql);
-
-
-?>

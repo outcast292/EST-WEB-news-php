@@ -3,6 +3,7 @@
 <head>
 	<title>Admin page</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
 	<style type="text/css">
 		
 	</style>

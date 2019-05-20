@@ -4,6 +4,7 @@
     <title>HELLLO WORLD</title>
     <meta charset="utf-8" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" href="images/favico.png" type="image/x-icon">
 </head>
 <body>
      <div id="bloc_page">

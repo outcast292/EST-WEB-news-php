@@ -2,6 +2,7 @@
 <head>
 
 	<link rel="stylesheet" href="../css/admin.css">
+	<link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
 	<title> Admin pannel </title>
 
 </head>
@@ -96,15 +97,8 @@
 
 	</div>
 	</div>
-	
-
-
 	</div>
-	
 
 	<?php  } ?>
-
 </body>
-
-
 </html>
